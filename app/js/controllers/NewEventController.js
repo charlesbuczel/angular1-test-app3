@@ -1,9 +1,12 @@
 'use strict';
 
-eventsApp.controller('NewEventController', function ($scope) {
-  $scope.saveEvent = (event) => {
+eventsApp.controller('NewEventController', function ($scope, eventData) {
+  $scope.saveEvent = (event, newEventForm) => {
     if (newEventForm.$valid) {
-      this.event = event;
+      eventData
+        .save(event)
+        .$promise
+        .then(response => console.log(response))
     }
   };
   $scope.cancelAdd = () => window.location = '/EventDetails.html';

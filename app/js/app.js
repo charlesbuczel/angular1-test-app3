@@ -1,3 +1,3 @@
 'use strict';
 
-const eventsApp = angular.module('eventsApp', []);
+const eventsApp = angular.module('eventsApp', ['ngResource']);
